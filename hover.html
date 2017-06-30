@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+     <head>
+          <meta charset='utf-8'>
+          <title>Hover In/Out</title>
+          <meta name='description' content='Hover In/Out Project for Coding Dojo'>
+          <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+          <script type="text/javascript">
+        $(document).ready(function() {
+            $("img").hover(
+            function() {
+                var current = $(this).attr("src");
+                var replacement = $(this).attr("data-alt-src");
+                $(this).attr("src", replacement);
+                $(this).attr("data-alt-src", current);
+            },
+            function() {
+                var current = $(this).attr("src");
+                var replacement = $(this).attr("data-alt-src");
+                $(this).attr("src", replacement);
+                $(this).attr("data-alt-src", current);
+            });
+        });
+          </script>
+          <style type="text/css">
+          #wrapper {
+              width: 70%;
+              margin: auto;
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: center;
+          }
+          img {
+              width: 400px;
+              height: 318px;
+              margin: 5px;
+          }
+          h1 {
+              display: block;
+              width: 100%;
+              text-align: center;
+          }
+          </style>
+     </head>
+     <body>
+         <div id="wrapper">
+             <h1>Hover In/Out</h1>
+             <img src="https://beebom-redkapmedia.netdna-ssl.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" data-alt-src="http://memeguy.com/photos/images/mrw-i-woke-up-this-morning-and-realized-i-forgot-to-submit-my-final-paper-worth--74144.gif" alt="image 1">
+             <img src="https://beebom-redkapmedia.netdna-ssl.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" data-alt-src="http://memeguy.com/photos/images/mrw-i-woke-up-this-morning-and-realized-i-forgot-to-submit-my-final-paper-worth--74144.gif" alt="image 2">
+             <img src="https://beebom-redkapmedia.netdna-ssl.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" data-alt-src="http://memeguy.com/photos/images/mrw-i-woke-up-this-morning-and-realized-i-forgot-to-submit-my-final-paper-worth--74144.gif" alt="image 3">
+             <img src="https://beebom-redkapmedia.netdna-ssl.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" data-alt-src="http://memeguy.com/photos/images/mrw-i-woke-up-this-morning-and-realized-i-forgot-to-submit-my-final-paper-worth--74144.gif" alt="image 4">
+         </div>
+     </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Javascript Demo</title>
+	<style>
+		body {
+			background-color:black;
+			font-family: monospace;
+			color:white;
+			font-size:50px;
+			text-align: center;
+			margin-top:20%;
+		}
+
+		#magic{
+			color: #777;
+			border-right: 1px solid #777;
+			padding-right: 7px;
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+
+	Coding is <div id="magic"></div>
+
+	<script>
+
+		var words = ["fun", "exciting", "about not giving up", "being helpful", "being open", "what I learned at CodingDojo!"],
+			el = document.getElementById('magic'),
+			word_counter = 0,
+			character_counter = 0;
+
+		function updateText()
+		{
+            // There is a bug where the spaces in the words do not appear correctly. For example, for the word "being helpful". After showing "being", the space should make the right border/cursor move a little bit to the right (to account for the space being entered by the user) yet it doesn't work correctly.
+			// Fixed with an if else statement
+            if(words[word_counter][character_counter] == " ") {
+                el.innerHTML += "&nbsp;";
+                character_counter++;
+            }
+            else {
+                el.innerHTML += words[word_counter][character_counter];
+                character_counter++;
+            }
+            // There is a bug where the last character in the word doesn't show up! Please fix this error.
+			// Fixed by adding +1 to length that defines when to change words
+            if(character_counter == words[word_counter].length+1) {
+                word_counter++; 	//choose a different word
+                character_counter = 0;	//start over with the first character of the word
+                el.innerHTML = '';  //set the html to be blank
+
+                //if we're displaying the last word, go back to the first word
+                if(word_counter == words.length)
+                        word_counter = 0;
+                }
+            }
+
+		setInterval(updateText,300);
+
+	</script>
+
+</body>
+
+</html>

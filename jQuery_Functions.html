@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#slide #up").click(function() {
+                $("#slide h2").slideUp();
+            });
+            $("#slide #down").click(function() {
+                $("#slide h2").slideDown();
+            });
+            $("#slide #toggle").click(function() {
+                $("#slide h2").slideToggle();
+            });
+            $("#hide #hide").click(function(){
+                $("#hide h2").hide();
+            });
+            $("#hide #show").click(function(){
+                $("#hide h2").show();
+            });
+            $("#hide #toggle").click(function() {
+                $("#hide h2").toggle();
+            });
+            $("#fade #in").click(function() {
+                $("#fade h2").fadeIn(500);
+            });
+            $("#fade #out").click(function() {
+                $("#fade h2").fadeOut(500);
+            });
+            $("#add #class").click(function(){
+                $("#add h2").addClass("red");
+            });
+            $("#add #before").click(function(){
+                $("#add #before").before("<p>This is a paragraph!</p>");
+            });
+            $("#add #after").click(function() {
+                $("#add #after").after("<p>This is another paragraph!</p>");
+            });
+            $("#append #append").click(function() {
+                $("#append").append("<h2>Another header?!</h2>");
+            });
+            $("#append #htmlget").click(function() {
+                var code = $("#append").html();
+                $("#append").append($("#append p").text(code));
+            });
+            $("#attr #fix").click(function(){
+                $("#attr img").attr("width", "284");
+            });
+            $("#attr #revert").click(function(){
+                $("#attr img").attr("width", "400");
+            });
+            $("#val :submit").click(function() {
+                var value = $("#val :text").val();
+                $("#val p").text(value);
+            });
+            $("#data").data("stored", "Boo!");
+            $("#data button").click(function(){
+                $("#data p").text($("#data").data("stored"));
+            });
+        });
+        </script>
+        <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrapper {
+            width: 75%;
+            min-width: 500px;
+            text-align: center;
+            background-color: whitesmoke;
+            margin: 0 auto;
+            border-left: 1px solid darkgrey;
+            border-right: 1px solid darkgrey;
+        }
+        #wrapper div {
+            padding-bottom: 20px;
+            border-top: 1px solid darkgrey;
+        }
+        #wrapper div:first-child {
+            border: none;
+        }
+        .red {
+            color: red;
+        }
+        h1 {
+            font-size: 30pt;
+            padding: 20px;
+        }
+        h2 {
+            color: #676767;
+            background-color: lightgray;
+            margin-bottom: 10px;
+            font-size: 24pt;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>JQuery Functions</h1>
+            <div id="slide">
+                <h2>.slideUp .slideDown .slideToggle</h2>
+                <button id="up">Click here to slide up header</button><br>
+                <button id="down">Click here to slide down header</button><br>
+                <button id="toggle">Click here to toggle header</button>
+            </div>
+            <div id="hide">
+                <h2>.hide .show .toggle</h2>
+                <button id="hide">Click here to hide the header</button><br>
+                <button id="show">Click here to show the header</button><br>
+                <button id="toggle">Click here to toggle the header</button>
+            </div>
+            <div id="fade">
+                <h2>.fadeIn .fadeOut</h2>
+                <button id="out">Click here to fade out header</button><br>
+                <button id="in">Click here to fade in header</button>
+            </div>
+            <div id="add">
+                <h2>.addClass .before .after</h2>
+                <button id="class">Click here to make header text red</button><br>
+                <button id="before">Click here to add paragraph before this button</button><br>
+                <button id="after">Click here to add paragraph after this button</button>
+            </div>
+            <div id="append">
+                <h2>.append .html</h2>
+                <button id="append">Click here to add a header below all these buttons</button><br>
+                <button id="htmlget">Click here to see the html of this section</button>
+                <p></p>
+            </div>
+            <div id="attr">
+                <h2>.attr</h2>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" width="400" height="100"><br>
+                <button id="fix">Click here to fix the width of the image</button><br>
+                <button id="revert">Click here to revert the width of the image</button>
+            </div>
+            <div id="val">
+                <h2>.val .text</h2>
+                <input type="text" value="type here to change text below"><br>
+                <input type="submit" value="submit">
+                <p>Text here</p>
+            </div>
+            <div id="data">
+                <h2>.data</h2>
+                <button>Click here to see the stored data for this div below</button>
+                <p></p>
+            </div>
+        </div>
+    </body>
+</html>

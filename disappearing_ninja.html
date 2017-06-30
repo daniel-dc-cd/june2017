@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Disappearing Puppies</title>
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('img').click(function(){
+                    $(this).hide();
+                })
+                $('button').click(function(){
+                    $('img').show();
+                })
+        })
+        </script>
+        <style>
+            #main {
+                background: #F5F3EE;
+            }
+            h1 {
+                color: #E44424;
+                text-align: center;
+            }
+            img {
+                margin: auto;
+                width: 90%;
+            }
+            button {
+                display: block;
+                margin: auto;
+                width: 25%;
+                background: #4A96AD
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+        <h1>Disappearing Puppies</h1>
+        <table>
+            <tr>
+                <td><img src="puppy.jpeg"></td>
+                <td><img src="puppy.jpeg"></td>
+                <td><img src="puppy.jpeg"></td> 
+                <td><img src="puppy.jpeg"></td> 
+            </tr>
+            <tr>
+                <td><img src="puppy.jpeg"></td>
+                <td><img src="puppy.jpeg"></td>
+                <td><img src="puppy.jpeg"></td> 
+                <td><img src="puppy.jpeg"></td> 
+            </tr>
+        </table>
+        <button>Reset</button>
+        </div>
+    </body>
+</html>
